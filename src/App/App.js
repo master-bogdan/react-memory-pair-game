@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import NavBar from '../components/Navbar/Navbar';
 import Game from '../components/Game/Game';
+import bg from './bg.jpg';
 
 class App extends Component {
     state = {
@@ -13,7 +14,7 @@ class App extends Component {
     
     render() {
         return (
-            <div className="App">
+            <div className="App" style={{background: `url(${bg}) center/cover no-repeat`}}>
                 <NavBar  
                     name={this.state.name}
                     score={this.state.score}
