@@ -1,0 +1,9 @@
+.Game {
+    padding: 10px;
+    border: 1px solid black;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
