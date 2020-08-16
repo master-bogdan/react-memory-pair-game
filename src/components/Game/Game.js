@@ -6,11 +6,11 @@ import { Col } from 'reactstrap';
 
 
 class Game extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             showField: true,
-            cls: null
         }
         Images.sort(() => Math.random() - 0.5);
     }
@@ -19,11 +19,22 @@ class Game extends Component {
         setTimeout(() => this.setState({showField: false}), 3000);
     }
     
+    cardPair = [];
     onCoverClick = (event) => {
         const card = event.target;
-        console.log(card.getAttribute('check'));
+        if(card.getAttribute('check') === 'true') {
+            return;
+        }
+
         if (card.getAttribute('check') === 'false') {
             card.classList.remove("Card_blank");
+            card.setAttribute('check', 'true');
+            this.cardPair.push(card.getAttribute('data-name'));
+            console.log(this.cardPair);
+        }
+         
+        if (this.cardPair[0] === this.cardPair[1]) {
+            console.log('match');
         }
     }
 
