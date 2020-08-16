@@ -1,32 +1,33 @@
 {
   "files": {
-    "main.css": "/react-memory-pair-game/static/css/main.8f8326c5.chunk.css",
-    "main.js": "/react-memory-pair-game/static/js/main.a9442f25.chunk.js",
-    "main.js.map": "/react-memory-pair-game/static/js/main.a9442f25.chunk.js.map",
+    "main.css": "/react-memory-pair-game/static/css/main.b21dfbe3.chunk.css",
+    "main.js": "/react-memory-pair-game/static/js/main.60b69c73.chunk.js",
+    "main.js.map": "/react-memory-pair-game/static/js/main.60b69c73.chunk.js.map",
     "runtime-main.js": "/react-memory-pair-game/static/js/runtime-main.7b619fbb.js",
     "runtime-main.js.map": "/react-memory-pair-game/static/js/runtime-main.7b619fbb.js.map",
     "static/css/2.11829350.chunk.css": "/react-memory-pair-game/static/css/2.11829350.chunk.css",
-    "static/js/2.ac961790.chunk.js": "/react-memory-pair-game/static/js/2.ac961790.chunk.js",
-    "static/js/2.ac961790.chunk.js.map": "/react-memory-pair-game/static/js/2.ac961790.chunk.js.map",
+    "static/js/2.dfd17424.chunk.js": "/react-memory-pair-game/static/js/2.dfd17424.chunk.js",
+    "static/js/2.dfd17424.chunk.js.map": "/react-memory-pair-game/static/js/2.dfd17424.chunk.js.map",
     "index.html": "/react-memory-pair-game/index.html",
-    "precache-manifest.1c2eef5bac22306307351ecece4255ef.js": "/react-memory-pair-game/precache-manifest.1c2eef5bac22306307351ecece4255ef.js",
+    "precache-manifest.14a61b75ab98ec38c9279b12275e2909.js": "/react-memory-pair-game/precache-manifest.14a61b75ab98ec38c9279b12275e2909.js",
     "service-worker.js": "/react-memory-pair-game/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/react-memory-pair-game/static/css/2.11829350.chunk.css.map",
-    "static/css/main.8f8326c5.chunk.css.map": "/react-memory-pair-game/static/css/main.8f8326c5.chunk.css.map",
-    "static/js/2.ac961790.chunk.js.LICENSE.txt": "/react-memory-pair-game/static/js/2.ac961790.chunk.js.LICENSE.txt",
+    "static/css/main.b21dfbe3.chunk.css.map": "/react-memory-pair-game/static/css/main.b21dfbe3.chunk.css.map",
+    "static/js/2.dfd17424.chunk.js.LICENSE.txt": "/react-memory-pair-game/static/js/2.dfd17424.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/react-memory-pair-game/static/media/1.0f26e915.jpg",
     "static/media/2.jpg": "/react-memory-pair-game/static/media/2.9b49cf59.jpg",
     "static/media/3.jpg": "/react-memory-pair-game/static/media/3.f05cd155.jpg",
     "static/media/4.jpg": "/react-memory-pair-game/static/media/4.20c2f660.jpg",
     "static/media/5.jpg": "/react-memory-pair-game/static/media/5.56b0e2c1.jpg",
     "static/media/6.jpg": "/react-memory-pair-game/static/media/6.91247571.jpg",
-    "static/media/card.jpg": "/react-memory-pair-game/static/media/card.fd24ad4b.jpg"
+    "static/media/bg.jpg": "/react-memory-pair-game/static/media/bg.2e42a76f.jpg",
+    "static/media/Card.css": "/react-memory-pair-game/static/media/card.fd24ad4b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.7b619fbb.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.ac961790.chunk.js",
-    "static/css/main.8f8326c5.chunk.css",
-    "static/js/main.a9442f25.chunk.js"
+    "static/js/2.dfd17424.chunk.js",
+    "static/css/main.b21dfbe3.chunk.css",
+    "static/js/main.60b69c73.chunk.js"
   ]
 }
