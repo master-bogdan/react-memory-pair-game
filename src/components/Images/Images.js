@@ -6,7 +6,7 @@ import Ayla from './Files/5.jpg';
 import Jaja from './Files/6.jpg';
 import Card from './Files/card.jpg';
 
-export const images = [
+const imgArray = [
         {
             name: 'Dart',
             pic: Dart,
@@ -42,4 +42,17 @@ export const images = [
             pic: Card,
             flipped: false
         }
+];
+
+export const images = [];
+    for (let i = 0; i < imgArray.length - 1; i++) {
+        images.push(imgArray[i], imgArray[i]);
+    }
+    
+export const cover = [
+    {
+        name: 'card',
+        pic: Card,
+        flipped: false
+    }
 ];
