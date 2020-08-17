@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c9bea1051c3b218ad7946b1a45eceed",
+    "revision": "f2841d9c25e3890f505c534b1513092b",
     "url": "/react-memory-pair-game/index.html"
   },
   {
-    "revision": "698cb94084a73d19b026",
+    "revision": "d3312bb20754e9ccf7c1",
     "url": "/react-memory-pair-game/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "2d6a400bb2974f35e7f5",
-    "url": "/react-memory-pair-game/static/css/main.b21dfbe3.chunk.css"
+    "revision": "8f927410e45d3358d640",
+    "url": "/react-memory-pair-game/static/css/main.a4424f37.chunk.css"
   },
   {
-    "revision": "698cb94084a73d19b026",
-    "url": "/react-memory-pair-game/static/js/2.dfd17424.chunk.js"
+    "revision": "d3312bb20754e9ccf7c1",
+    "url": "/react-memory-pair-game/static/js/2.9055dc51.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/react-memory-pair-game/static/js/2.dfd17424.chunk.js.LICENSE.txt"
+    "url": "/react-memory-pair-game/static/js/2.9055dc51.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2d6a400bb2974f35e7f5",
-    "url": "/react-memory-pair-game/static/js/main.60b69c73.chunk.js"
+    "revision": "8f927410e45d3358d640",
+    "url": "/react-memory-pair-game/static/js/main.1f6dfee3.chunk.js"
   },
   {
     "revision": "8874b07defc2b5c5212a",
