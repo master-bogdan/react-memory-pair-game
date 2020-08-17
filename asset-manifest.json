@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-memory-pair-game/static/css/main.a4424f37.chunk.css",
+    "main.css": "/react-memory-pair-game/static/css/main.1facdbc6.chunk.css",
     "main.js": "/react-memory-pair-game/static/js/main.1f6dfee3.chunk.js",
     "main.js.map": "/react-memory-pair-game/static/js/main.1f6dfee3.chunk.js.map",
     "runtime-main.js": "/react-memory-pair-game/static/js/runtime-main.7b619fbb.js",
@@ -9,10 +9,10 @@
     "static/js/2.9055dc51.chunk.js": "/react-memory-pair-game/static/js/2.9055dc51.chunk.js",
     "static/js/2.9055dc51.chunk.js.map": "/react-memory-pair-game/static/js/2.9055dc51.chunk.js.map",
     "index.html": "/react-memory-pair-game/index.html",
-    "precache-manifest.f43aa3195c581ea93b75ef70bf27dafa.js": "/react-memory-pair-game/precache-manifest.f43aa3195c581ea93b75ef70bf27dafa.js",
+    "precache-manifest.6a660fb1c398a992cb3dcb8f37d2b9f9.js": "/react-memory-pair-game/precache-manifest.6a660fb1c398a992cb3dcb8f37d2b9f9.js",
     "service-worker.js": "/react-memory-pair-game/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/react-memory-pair-game/static/css/2.11829350.chunk.css.map",
-    "static/css/main.a4424f37.chunk.css.map": "/react-memory-pair-game/static/css/main.a4424f37.chunk.css.map",
+    "static/css/main.1facdbc6.chunk.css.map": "/react-memory-pair-game/static/css/main.1facdbc6.chunk.css.map",
     "static/js/2.9055dc51.chunk.js.LICENSE.txt": "/react-memory-pair-game/static/js/2.9055dc51.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/react-memory-pair-game/static/media/1.0f26e915.jpg",
     "static/media/2.jpg": "/react-memory-pair-game/static/media/2.9b49cf59.jpg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.7b619fbb.js",
     "static/css/2.11829350.chunk.css",
     "static/js/2.9055dc51.chunk.js",
-    "static/css/main.a4424f37.chunk.css",
+    "static/css/main.1facdbc6.chunk.css",
     "static/js/main.1f6dfee3.chunk.js"
   ]
 }
