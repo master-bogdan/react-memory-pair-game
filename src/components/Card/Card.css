@@ -1,22 +1,40 @@
 .Card {
-    width: 160px;
-    height: 220px;
-    margin: 5px;
-    margin-top: 20px;
+    width: 150px;
+    height: 210px;
+    margin: 20px 0;
     -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     cursor: pointer;
+    animation: rotate 1s forwards;
 }
 
 .Card_blank {
     background: url('../Images/Files/card.jpg') center/cover no-repeat !important;
-    width: 160px;
-    height: 220px;
-    margin: 5px;
-    margin-top: 20px;
+    width: 150px;
+    height: 210px;
+    margin: 20px 0;
     -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.75);
     cursor: pointer;
+    animation: rotate2 1s forwards;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(90deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
 }

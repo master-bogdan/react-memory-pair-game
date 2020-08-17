@@ -13,15 +13,18 @@ class Game extends Component {
             showField: true,
         }
         Images.sort(() => Math.random() - 0.5);
+        
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({showField: false}), 3000);
+        setTimeout(() => this.setState({showField: false}), 2000);
     }
     
-    cardPair = [];
+        cardPair = [];
     onCoverClick = (event) => {
         const card = event.target;
+        const [...cards] = document.getElementsByClassName('Card');
+
         if(card.getAttribute('check') === 'true') {
             return;
         }
@@ -30,12 +33,32 @@ class Game extends Component {
             card.classList.remove("Card_blank");
             card.setAttribute('check', 'true');
             this.cardPair.push(card.getAttribute('data-name'));
-            console.log(this.cardPair);
+            console.log(this.cardPair.length);
         }
          
-        if (this.cardPair[0] === this.cardPair[1]) {
+        if (this.cardPair[0] !== this.cardPair[1] && this.cardPair.length === 2) {
+            
+            console.log(cards);
+            cards.map((card) => {
+                return setTimeout(() => {
+                    card.setAttribute('check', 'false');
+                    card.classList.add("Card_blank");
+                    this.cardPair = [];
+                }, 1000);
+            });
+            
+        } else if (this.cardPair[0] === this.cardPair[1] && this.cardPair.length === 2)
+        {
             console.log('match');
+            cards.map((card) => {
+                if (card.getAttribute('data-name') === this.cardPair[0]) {
+                    return card.remove();
+                }
+            })
+            this.cardPair = [];
         }
+
+
     }
 
     render() {
