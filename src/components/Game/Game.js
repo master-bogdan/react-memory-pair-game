@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Game.module.css';
-import { images as Images } from '../Images/Images';
+
 import Card from '../Card/Card';
 import { Col } from 'reactstrap';
 
@@ -11,19 +11,29 @@ class Game extends Component {
         super(props);
         this.state = {
             showField: true,
+            gameEnd: false
         }
-        Images.sort(() => Math.random() - 0.5);
-        
+        props.images.sort(() => Math.random() - 0.5);
+        this.cardPair = [];
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({showField: false}), 2000);
+        this.field = setTimeout(() => this.showGameField(), 2000);
     }
+
+    componentWillUnmount() {
+        clearInterval(this.field);
+     }
     
-        cardPair = [];
+    showGameField = () => {
+        this.setState({showField: false});
+    }
+
+        
     onCoverClick = (event) => {
         const card = event.target;
-        const [...cards] = document.getElementsByClassName('Card');
+        const cards = document.getElementsByClassName('Card');
+        console.log(this.props.score);
 
         if(card.getAttribute('check') === 'true') {
             return;
@@ -33,13 +43,10 @@ class Game extends Component {
             card.classList.remove("Card_blank");
             card.setAttribute('check', 'true');
             this.cardPair.push(card.getAttribute('data-name'));
-            console.log(this.cardPair.length);
         }
          
         if (this.cardPair[0] !== this.cardPair[1] && this.cardPair.length === 2) {
-            
-            console.log(cards);
-            cards.map((card) => {
+            [...cards].map((card) => {
                 return setTimeout(() => {
                     card.setAttribute('check', 'false');
                     card.classList.add("Card_blank");
@@ -47,24 +54,31 @@ class Game extends Component {
                 }, 1000);
             });
             
-        } else if (this.cardPair[0] === this.cardPair[1] && this.cardPair.length === 2)
+        } 
+        
+        if (this.cardPair[0] === this.cardPair[1] && this.cardPair.length === 2)
         {
-            console.log('match');
-            cards.map((card) => {
-                if (card.getAttribute('data-name') === this.cardPair[0]) {
-                    return card.remove();
-                }
+            [...cards].map((card) => {
+                return card.getAttribute('data-name') === this.cardPair[0] ? card.remove() : null;
             })
             this.cardPair = [];
         }
 
-
+        if (cards.length < 2) {
+            console.log('Finish game');
+            this.props.score();
+            this.setState({gameEnd: true, showField: true});
+            setTimeout(() => {
+                this.setState({gameEnd: false});
+                this.componentDidMount();
+            }, 1000);
+        }
     }
 
     render() {
         return (
             <div className={classes.Game}>
-                {Images
+                {!this.state.gameEnd ? this.props.images
                     .map((item, index) => {
                         return (
                             <Col xs='3' key={index}> 
@@ -77,7 +91,9 @@ class Game extends Component {
                                 />
                             </Col>
                         )
-                })}
+                })
+                : null
+                }
             </div>
         )
     }

@@ -3,6 +3,7 @@ import { Container } from 'reactstrap';
 import NavBar from '../components/Navbar/Navbar';
 import Game from '../components/Game/Game';
 import bg from './bg.jpg';
+import { images as Images } from '../components/Images/Images';
 
 class App extends Component {
     state = {
@@ -10,6 +11,10 @@ class App extends Component {
         showEndGame: false,
         name: '',
         score: 0
+    }
+
+    scoreFunction = () => {
+        this.setState({score: this.state.score + 1})
     }
     
     render() {
@@ -20,7 +25,10 @@ class App extends Component {
                     score={this.state.score}
                 />
                 <Container fluid={true}>
-                    <Game />
+                    <Game 
+                        score={this.scoreFunction} 
+                        images={Images} 
+                    />
                 </Container>
             </div>
         );

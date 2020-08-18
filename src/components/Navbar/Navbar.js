@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, NavbarText } from 'reactstrap';
 const NavBar = (props) => {
 
     return (
-        <Navbar color="primary mb-3">
+        <Navbar color="dark mb-3">
             <NavbarBrand className="text-white">
                 Memory Pair Game
             </NavbarBrand>
