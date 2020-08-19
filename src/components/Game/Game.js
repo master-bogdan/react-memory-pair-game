@@ -65,7 +65,7 @@ class Game extends Component {
         }
 
         if (cards.length < 2) {
-            console.log('Finish game');
+            alert('“Do. Or do not. There is no try.”');
             this.props.score();
             this.setState({gameEnd: true, showField: true});
             setTimeout(() => {

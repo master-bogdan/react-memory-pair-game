@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+    width: 100%;
+    height: fit-content;
+    min-height: 800px;
+}
