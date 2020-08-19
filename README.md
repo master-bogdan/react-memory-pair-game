@@ -1,3 +1,14 @@
+# :dart: React memory pair game
+
+Here you can play [DEMO](https://master-bogdan.github.io/react-memory-pair-game/)
+
+### Technologies & functions
+- React (react-create-app)
+- Reactstrap
+- css modules  
+- Login function (to enter your name)
+- Game score function
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
