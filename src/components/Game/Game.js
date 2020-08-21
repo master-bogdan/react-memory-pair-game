@@ -68,6 +68,7 @@ class Game extends Component {
             alert('“Do. Or do not. There is no try.”');
             this.props.score();
             this.setState({gameEnd: true, showField: true});
+            this.props.images.sort(() => Math.random() - 0.5);
             setTimeout(() => {
                 this.setState({gameEnd: false});
                 this.componentDidMount();
@@ -81,7 +82,7 @@ class Game extends Component {
                 {!this.state.gameEnd ? this.props.images
                     .map((item, index) => {
                         return (
-                            <Col xs='3' key={index}> 
+                            <Col xs='3' key={index + Math.random()}> 
                                 <Card 
                                     className={this.state.showField ? true : false}
                                     name={item.name}

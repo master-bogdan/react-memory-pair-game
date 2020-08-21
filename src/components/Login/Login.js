@@ -29,7 +29,7 @@ const Login = props => {
                         onChange={getPlayerName}
                     />
                     <Button 
-                        className="w-25 mt-3 btn-info" 
+                        className="mt-3 btn-info" 
                         type="submit"
                     >
                         Submit
