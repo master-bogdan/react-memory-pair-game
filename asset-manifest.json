@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-memory-pair-game/static/css/main.24d5beaf.chunk.css",
-    "main.js": "/react-memory-pair-game/static/js/main.9d56b338.chunk.js",
-    "main.js.map": "/react-memory-pair-game/static/js/main.9d56b338.chunk.js.map",
+    "main.css": "/react-memory-pair-game/static/css/main.c27e4f84.chunk.css",
+    "main.js": "/react-memory-pair-game/static/js/main.0549c8d2.chunk.js",
+    "main.js.map": "/react-memory-pair-game/static/js/main.0549c8d2.chunk.js.map",
     "runtime-main.js": "/react-memory-pair-game/static/js/runtime-main.7b619fbb.js",
     "runtime-main.js.map": "/react-memory-pair-game/static/js/runtime-main.7b619fbb.js.map",
     "static/css/2.11829350.chunk.css": "/react-memory-pair-game/static/css/2.11829350.chunk.css",
     "static/js/2.eebfa9e7.chunk.js": "/react-memory-pair-game/static/js/2.eebfa9e7.chunk.js",
     "static/js/2.eebfa9e7.chunk.js.map": "/react-memory-pair-game/static/js/2.eebfa9e7.chunk.js.map",
     "index.html": "/react-memory-pair-game/index.html",
-    "precache-manifest.c8dfa5fdfed0cbeb1935f65215a08872.js": "/react-memory-pair-game/precache-manifest.c8dfa5fdfed0cbeb1935f65215a08872.js",
+    "precache-manifest.1d0bcc3d337dfd66c23c169fec01b759.js": "/react-memory-pair-game/precache-manifest.1d0bcc3d337dfd66c23c169fec01b759.js",
     "service-worker.js": "/react-memory-pair-game/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/react-memory-pair-game/static/css/2.11829350.chunk.css.map",
-    "static/css/main.24d5beaf.chunk.css.map": "/react-memory-pair-game/static/css/main.24d5beaf.chunk.css.map",
+    "static/css/main.c27e4f84.chunk.css.map": "/react-memory-pair-game/static/css/main.c27e4f84.chunk.css.map",
     "static/js/2.eebfa9e7.chunk.js.LICENSE.txt": "/react-memory-pair-game/static/js/2.eebfa9e7.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/react-memory-pair-game/static/media/1.0f26e915.jpg",
     "static/media/2.jpg": "/react-memory-pair-game/static/media/2.9b49cf59.jpg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.7b619fbb.js",
     "static/css/2.11829350.chunk.css",
     "static/js/2.eebfa9e7.chunk.js",
-    "static/css/main.24d5beaf.chunk.css",
-    "static/js/main.9d56b338.chunk.js"
+    "static/css/main.c27e4f84.chunk.css",
+    "static/js/main.0549c8d2.chunk.js"
   ]
 }
