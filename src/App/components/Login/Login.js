@@ -2,21 +2,21 @@ import React from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import classes from './Login.module.css';
 
-const Login = props => {
+const Login = ({ getName, onLogin }) => {
 
     const getPlayerName = (event) => {
         let value = event.target.value;
-        props.getName(value);
+        getName(value);
     }
 
-    const onLogin = (event) => {
+    const onLoginHandler = (event) => {
         event.preventDefault();
-        props.onLogin();
+        onLogin();
     }
 
     return (
         <div className={classes.Login}>
-            <Form onSubmit={onLogin}>
+            <Form onSubmit={onLoginHandler}>
                 <FormGroup>
                     <Label 
                         htmlFor="name"

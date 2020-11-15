@@ -10,7 +10,7 @@
 }
 
 .Card_blank {
-    background: url('../Images/Files/card.jpg') 50% center/cover no-repeat !important;
+    background: url(../../../Assets/images/card.jpg) 50% center/cover no-repeat !important;
     animation: rotate2 1s forwards;
 }
 

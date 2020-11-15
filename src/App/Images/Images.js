@@ -1,10 +1,10 @@
-import Dart from './Files/1.jpg';
-import Luke from './Files/2.jpg';
-import Akbar from './Files/3.jpg';
-import Obi from './Files/4.jpg';
-import Ayla from './Files/5.jpg';
-import Jaja from './Files/6.jpg';
-import Card from './Files/card.jpg';
+import Dart from '../../Assets/images/1.jpg';
+import Luke from '../../Assets/images/2.jpg';
+import Akbar from '../../Assets/images/3.jpg';
+import Obi from '../../Assets/images/4.jpg';
+import Ayla from '../../Assets/images/5.jpg';
+import Jaja from '../../Assets/images/6.jpg';
+import Card from '../../Assets/images/card.jpg';
 
 const imgArray = [
         {

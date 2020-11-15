@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Game.module.css';
 
-import Card from '../Card/Card';
+import Card from '../Card';
 import { Col } from 'reactstrap';
 
 
@@ -28,12 +28,10 @@ class Game extends Component {
     showGameField = () => {
         this.setState({showField: false});
     }
-
-        
+   
     onCoverClick = (event) => {
         const card = event.target;
         const cards = document.getElementsByClassName('Card');
-        console.log(this.props.score);
 
         if(card.getAttribute('check') === 'true') {
             return;

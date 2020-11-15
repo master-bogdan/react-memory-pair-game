@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import NavBar from '../components/Navbar/Navbar';
-import Login from '../components/Login/Login';
-import Game from '../components/Game/Game';
-import bg from './bg.jpg';
-import { images as Images } from '../components/Images/Images';
+import NavBar from './components/Navbar';
+import Login from './components/Login';
+import Game from './components/Game';
+import { images as Images } from './Images/Images';
+import classes from './App.module.css';
 
 class App extends Component {
     state = {
@@ -31,7 +31,7 @@ class App extends Component {
     render() {
         console.log(this.state.showLogin);
         return (
-            <div className="App" style={{background: `url(${bg}) center/cover no-repeat`}}>
+            <div className={classes.App}>
                 <NavBar  
                     name={this.state.name}
                     score={this.state.score}
