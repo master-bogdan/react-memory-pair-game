@@ -14,24 +14,6 @@
     animation: rotate2 1s forwards;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotateY(90deg);
-    }
-    to {
-        transform: rotateY(0deg);
-    }
-}
-
-@keyframes rotate2 {
-    from {
-        transform: rotateY(180deg);
-    }
-    to {
-        transform: rotateY(0deg);
-    }
-}
-
 @media only screen and (max-width: 768px) {
     .Card, .Card_blank  {
         width: 100%;
