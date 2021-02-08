@@ -36,5 +36,6 @@ module.exports = {
     'no-unused-vars': 'warn',
     'import/no-named-as-default': 0,
     'no-use-before-define': 0,
+    'no-param-reassign': 0,
   },
 };

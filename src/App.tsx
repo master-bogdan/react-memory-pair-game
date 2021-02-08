@@ -29,7 +29,7 @@ const App: React.FC = () => {
     <Main>
       <NavBar
         name={userName}
-        score={userName}
+        score={gameScore}
       />
       <Container fluid>
         {showLogin ? (

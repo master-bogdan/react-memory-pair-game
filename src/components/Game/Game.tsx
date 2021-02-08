@@ -12,51 +12,52 @@ interface GameProps {
 }
 
 const Game: React.FC<GameProps> = ({ score }) => {
+  const [game, setGame] = useState <Array<any>>([]);
   const [showField, setShowField] = useState <boolean>(true);
   const [endGame, setEndGame] = useState <boolean>(false);
   const [cardPair, setCardPair] = useState <Array<string | null>>([]);
-  images.sort(() => Math.random() - 0.5);
-
-  const showGameField = () => {
-    setShowField(false);
-  };
 
   useEffect(() => {
-    setTimeout(() => showGameField(), 2000);
-  }, [showField]);
+    setTimeout(() => setShowField(false), 2000);
+    const newGame = images.sort(() => Math.random() - 0.5);
+    setGame(newGame);
+  }, []);
 
-  const onCoverClick = (event: React.SyntheticEvent) => {
+  const onCoverClick = (
+    event: React.SyntheticEvent,
+    check: boolean,
+    setCheck: Function,
+  ) => {
     const card = event.currentTarget;
-    const cards: any = document.getElementsByClassName('Card');
 
-    if (card.getAttribute('check') === 'true') {
+    if (check) {
       return;
     }
 
-    if (card.getAttribute('check') === 'false') {
-      card.setAttribute('check', 'true');
-      cardPair.push(card.getAttribute('data-name'));
+    if (!check) {
+      setCheck(true);
+      const cardName = card.getAttribute('data-name');
+      cardPair.push(cardName);
     }
 
     if (cardPair[0] !== cardPair[1] && cardPair.length === 2) {
-      [...cards].map((card) => setTimeout(() => {
-        card.setAttribute('check', 'false');
-        card.classList.add('Card_blank');
-        setCardPair([]);
-      }, 1000));
-    }
-
-    if (cardPair[0] === cardPair[1] && cardPair.length === 2) {
-      [...cards].map((card) => (card.getAttribute('data-name') === cardPair[0] ? card.remove() : null));
       setCardPair([]);
     }
 
-    if (cards.length < 2) {
+    if (cardPair[0] === cardPair[1] && cardPair.length === 2) {
+      game.forEach((item) => {
+        if (item.name === cardPair[0]) {
+          item.flipped = true;
+        }
+      });
+      setCardPair([]);
+    }
+
+    if (game.length < 2) {
       alert('“Do. Or do not. There is no try.”');
       score();
       setEndGame(true);
       setShowField(true);
-      images.sort(() => Math.random() - 0.5);
       setTimeout(() => {
         setEndGame(false);
       }, 1000);
@@ -66,19 +67,19 @@ const Game: React.FC<GameProps> = ({ score }) => {
   return (
     <GameField>
       {!endGame
-        ? images.map((item, index) => (
+        && game.map((item, index) => (
           // eslint-disable-next-line
           <Col xs="3" key={index + Math.random()}>
             <Card
+              id={index}
               animation={showField}
               name={item.name}
               image={item.pic}
-              check={Boolean(item.flipped)}
+              flipped={item.flipped}
               onCoverClick={onCoverClick}
             />
           </Col>
-        ))
-        : null}
+        ))}
     </GameField>
   );
 };

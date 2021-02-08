@@ -3,7 +3,7 @@ import { Navbar, NavbarBrand, NavbarText } from 'reactstrap';
 
 interface NavProps {
   name: string
-  score: string
+  score: number
 }
 
 const NavBar: React.FC<NavProps> = ({ name, score }) => (
