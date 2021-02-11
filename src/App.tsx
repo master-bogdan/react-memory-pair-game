@@ -6,14 +6,9 @@ import Game from './components/Game';
 import { Main } from './styles';
 
 const App: React.FC = () => {
-  const [showLogin, setShowLogin] = useState <boolean>(false);
-  const [showEndGame, setShowEndGame] = useState <boolean>(false);
+  const [showLogin, setShowLogin] = useState <boolean>(true);
   const [userName, setUserName] = useState <string>('');
   const [gameScore, setGameScore] = useState <number>(0);
-
-  const scoreFunction = () => {
-    setGameScore(gameScore + 1);
-  };
 
   const setName = (value: string) => {
     setUserName(value);
@@ -40,7 +35,8 @@ const App: React.FC = () => {
         )
           : (
             <Game
-              score={setGameScore}
+              score={gameScore}
+              setScore={setGameScore}
             />
           )}
       </Container>

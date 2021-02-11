@@ -1,5 +1,8 @@
 import React from 'react';
 import { Navbar, NavbarBrand, NavbarText } from 'reactstrap';
+import {
+  StyledNavbar,
+} from './styles';
 
 interface NavProps {
   name: string
@@ -7,7 +10,7 @@ interface NavProps {
 }
 
 const NavBar: React.FC<NavProps> = ({ name, score }) => (
-  <Navbar color="dark mb-2">
+  <StyledNavbar color="dark mb-2">
     <NavbarBrand className="text-white">
       Memory Pair Game
     </NavbarBrand>
@@ -17,7 +20,7 @@ const NavBar: React.FC<NavProps> = ({ name, score }) => (
     <NavbarText className="text-white">
       Score: {score}
     </NavbarText>
-  </Navbar>
+  </StyledNavbar>
 );
 
 export default NavBar;

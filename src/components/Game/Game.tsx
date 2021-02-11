@@ -8,15 +8,15 @@ import {
 import { images, ICard } from 'data/images';
 
 interface GameProps {
-  score: Function
+  score: number
+  setScore: Function
 }
 
 type Match = Array<string | null | number>;
 
-const Game: React.FC<GameProps> = ({ score }) => {
+const Game: React.FC<GameProps> = ({ setScore, score }) => {
   const [game, setGame] = useState <ICard[]>([]);
   const [showField, setShowField] = useState <boolean>(true);
-  const [endGame, setEndGame] = useState <boolean>(false);
   const [cardOne, setCardOne] = useState <Match>([]);
   const [cardTwo, setCardTwo] = useState <Match>([]);
   const [pairCount, setPairCount] = useState <number>(0);
@@ -31,17 +31,18 @@ const Game: React.FC<GameProps> = ({ score }) => {
   // Start new game
   useEffect(() => {
     if (pairCount === 6) {
+      setScore(score + 1);
       alert('When I left you, I was but the learner. Now I am the master.');
       setTimeout(() => {
         const newGame: ICard[] = images.sort(() => Math.random() - 0.5);
         newGame.forEach((item) => { item.match = false; });
         setGame(newGame);
         setShowField(true);
+        setPairCount(0);
       }, 500);
       setTimeout(() => setShowField(false), 3000);
     }
-    // Loads when the game variable changes
-  }, [game, pairCount]);
+  }, [pairCount]);
 
   // Compare cards
   useEffect(() => {
@@ -107,8 +108,7 @@ const Game: React.FC<GameProps> = ({ score }) => {
 
   return (
     <GameField>
-      {!endGame
-        && game.map((item, index) => (
+      {game.map((item, index) => (
           // eslint-disable-next-line
           <Col xs="3" key={index}>
             <Card
@@ -121,7 +121,7 @@ const Game: React.FC<GameProps> = ({ score }) => {
               onCoverClick={onCoverClick}
             />
           </Col>
-        ))}
+      ))}
     </GameField>
   );
 };

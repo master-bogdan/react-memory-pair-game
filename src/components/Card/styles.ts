@@ -36,4 +36,10 @@ export const GameCard = styled.div<GameCardProps>`
   animation: ${({ check, movement }) => (movement || check ? css`${rotate2} 1s forwards` : css`${rotate} 1s forwards`)};
   background: ${({ movement, check, image }) => (movement || check ? `url(${image}) 50% center/cover no-repeat` : `url(${bg}) 50% center/cover no-repeat`)};
   visibility: ${({ match }) => (match ? 'hidden' : 'visible')};
+
+  @media (max-width: 780px) {
+    width: 100%;
+    max-width: 130px;
+    height: 180px;
+  }
 `;

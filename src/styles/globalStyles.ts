@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
   }
   
   *, *:before, *:after {
