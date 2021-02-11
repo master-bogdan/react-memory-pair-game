@@ -6,10 +6,11 @@ import Ayla from 'assets/images/5.jpg';
 import Jaja from 'assets/images/6.jpg';
 import Card from 'assets/images/card.jpg';
 
-type ICard = {
+export type ICard = {
   name: string
   pic: any
   flipped: boolean
+  match: boolean
 }
 
 const imgArray: Array<ICard> = [
@@ -17,43 +18,43 @@ const imgArray: Array<ICard> = [
     name: 'Dart',
     pic: Dart,
     flipped: false,
+    match: false,
   },
   {
     name: 'Luke',
     pic: Luke,
     flipped: false,
+    match: false,
   },
   {
     name: 'Akbar',
     pic: Akbar,
     flipped: false,
+    match: false,
   },
   {
     name: 'Obi',
     pic: Obi,
     flipped: false,
+    match: false,
   },
   {
     name: 'Ayla',
     pic: Ayla,
     flipped: false,
+    match: false,
   },
   {
     name: 'JaJa',
     pic: Jaja,
     flipped: false,
-  },
-  {
-    name: 'card',
-    pic: Card,
-    flipped: false,
+    match: false,
   },
 ];
 
-export const images: Array<ICard> = [];
-for (let i = 0; i < imgArray.length - 1; i++) {
-  images.push(imgArray[i], imgArray[i]);
-}
+const imagesCopy: ICard[] = JSON.parse(JSON.stringify(imgArray));
+
+export const images: ICard[] = imgArray.concat(imagesCopy);
 
 export const cover = [
   {

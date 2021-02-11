@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   GameCard,
 } from './styles';
@@ -8,26 +8,23 @@ interface CardProps {
   animation: boolean
   name: string
   image: string
+  matched: boolean
   flipped: boolean
   onCoverClick: Function
 }
 
 const Card: React.FC<CardProps> = ({
-  id, animation, name, image, flipped, onCoverClick,
-}) => {
-  const [checked, setChecked] = useState <boolean>(false);
-
-  return (
-    <GameCard
-      id={id}
-      movement={animation}
-      image={image}
-      data-name={name}
-      check={checked}
-      match={flipped}
-      onClick={(event) => onCoverClick(event, checked, setChecked)}
-    />
-  );
-};
+  id, animation, name, image, matched, flipped, onCoverClick,
+}) => (
+  <GameCard
+    id={id}
+    movement={animation}
+    image={image}
+    data-name={name}
+    check={flipped}
+    match={matched}
+    onClick={(event) => onCoverClick(event, id)}
+  />
+);
 
 export default Card;

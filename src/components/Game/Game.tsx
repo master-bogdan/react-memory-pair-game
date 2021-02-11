@@ -5,63 +5,104 @@ import {
   GameField,
 } from './styles';
 // Data
-import { images } from 'data/images';
+import { images, ICard } from 'data/images';
 
 interface GameProps {
   score: Function
 }
 
+type Match = Array<string | null | number>;
+
 const Game: React.FC<GameProps> = ({ score }) => {
-  const [game, setGame] = useState <Array<any>>([]);
+  const [game, setGame] = useState <ICard[]>([]);
   const [showField, setShowField] = useState <boolean>(true);
   const [endGame, setEndGame] = useState <boolean>(false);
-  const [cardPair, setCardPair] = useState <Array<string | null>>([]);
+  const [cardOne, setCardOne] = useState <Match>([]);
+  const [cardTwo, setCardTwo] = useState <Match>([]);
+  const [pairCount, setPairCount] = useState <number>(0);
 
+  // Start first game
   useEffect(() => {
-    setTimeout(() => setShowField(false), 2000);
-    const newGame = images.sort(() => Math.random() - 0.5);
+    const newGame: ICard[] = images.sort(() => Math.random() - 0.5);
     setGame(newGame);
+    setTimeout(() => setShowField(false), 2000);
   }, []);
+
+  // Start new game
+  useEffect(() => {
+    if (pairCount === 6) {
+      alert('When I left you, I was but the learner. Now I am the master.');
+      setTimeout(() => {
+        const newGame: ICard[] = images.sort(() => Math.random() - 0.5);
+        newGame.forEach((item) => { item.match = false; });
+        setGame(newGame);
+        setShowField(true);
+      }, 500);
+      setTimeout(() => setShowField(false), 3000);
+    }
+    // Loads when the game variable changes
+  }, [game, pairCount]);
+
+  // Compare cards
+  useEffect(() => {
+    if (cardTwo.length !== 0 && cardOne[0] === cardTwo[0]) {
+      setTimeout(() => {
+        setPairCount(pairCount + 1);
+        setCardOne([]);
+        setCardTwo([]);
+        game.forEach((item) => {
+          if (item.name === cardOne[0]) {
+            item.match = true;
+          }
+        });
+      }, 400);
+    }
+  }, [cardOne, cardTwo]);
 
   const onCoverClick = (
     event: React.SyntheticEvent,
-    check: boolean,
-    setCheck: Function,
+    id: number,
   ) => {
     const card = event.currentTarget;
+    const cardName: string | null = card.getAttribute('data-name');
 
-    if (check) {
-      return;
-    }
-
-    if (!check) {
-      setCheck(true);
-      const cardName = card.getAttribute('data-name');
-      cardPair.push(cardName);
-    }
-
-    if (cardPair[0] !== cardPair[1] && cardPair.length === 2) {
-      setCardPair([]);
-    }
-
-    if (cardPair[0] === cardPair[1] && cardPair.length === 2) {
-      game.forEach((item) => {
-        if (item.name === cardPair[0]) {
+    if (cardOne.length === 0) {
+      setCardOne([cardName, id]);
+      game.forEach((item, index) => {
+        if (id === index) {
           item.flipped = true;
         }
       });
-      setCardPair([]);
+    }
+    // Detect same card click
+    if (cardOne[1] === id) {
+      game.forEach((item) => {
+        item.flipped = false;
+      });
+      setCardOne([]);
+      setCardTwo([]);
+      return false;
+    }
+    // Condition to add second card for compare
+    if (cardOne.length !== 0) {
+      setCardTwo([cardName, id]);
+      game.forEach((item, index) => {
+        if (id === index) {
+          item.flipped = true;
+        }
+      });
+      // False if not match
+      setTimeout(() => {
+        game.forEach((item) => {
+          item.flipped = false;
+        });
+        setCardOne([]);
+        setCardTwo([]);
+        return false;
+      }, 600);
     }
 
-    if (game.length < 2) {
-      alert('“Do. Or do not. There is no try.”');
-      score();
-      setEndGame(true);
-      setShowField(true);
-      setTimeout(() => {
-        setEndGame(false);
-      }, 1000);
-    }
+    return true;
   };
 
   return (
@@ -69,13 +110,14 @@ const Game: React.FC<GameProps> = ({ score }) => {
       {!endGame
         && game.map((item, index) => (
           // eslint-disable-next-line
-          <Col xs="3" key={index + Math.random()}>
+          <Col xs="3" key={index}>
             <Card
               id={index}
               animation={showField}
               name={item.name}
               image={item.pic}
               flipped={item.flipped}
+              matched={item.match}
               onCoverClick={onCoverClick}
             />
           </Col>
