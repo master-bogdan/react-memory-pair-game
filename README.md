@@ -9,6 +9,12 @@ Here you can play [DEMO](https://master-bogdan.github.io/react-memory-pair-game/
 - Login function (to enter your name)
 - Game score function
 
+### 11.02.2021 Refactoring
+- Rewrite class components to React Hooks
+- Change css modules to styled-components
+- Add TypeScript
+- Fix styles
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
